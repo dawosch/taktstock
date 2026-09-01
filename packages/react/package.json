@@ -4,17 +4,22 @@
   "description": "React bindings for @taktstock/core.",
   "type": "module",
   "license": "MIT",
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
-    }
+    },
+    "./bravura.css": "./src/bravura.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "fonts",
+    "src/bravura.css"
   ],
   "scripts": {
     "build": "vite build",

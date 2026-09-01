@@ -1,1 +1,1 @@
-export const coreName = "@taktstock/core" as const;
+export { glyphMetrics, type GlyphMetrics, type Point } from "./bravura";

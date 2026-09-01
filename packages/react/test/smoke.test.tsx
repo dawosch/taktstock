@@ -1,24 +1,16 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { coreName } from "@taktstock/core";
-import { reactName } from "../src/index";
+import { glyphMetrics } from "@taktstock/core";
 
 function Probe() {
-  return (
-    <span>
-      {reactName}:{coreName}
-    </span>
-  );
+  const clef = glyphMetrics("gClef");
+  return <span>gClef:{clef ? clef.advanceWidth : "missing"}</span>;
 }
 
 describe("@taktstock/react entry point", () => {
-  it("is importable and exposes its package name", () => {
-    expect(reactName).toBe("@taktstock/react");
-  });
-
-  it("renders a component that pulls in @taktstock/core via the workspace", () => {
+  it("renders a component that pulls glyph metrics from @taktstock/core", () => {
     render(<Probe />);
-    screen.getByText("@taktstock/react:@taktstock/core");
+    screen.getByText("gClef:2.684");
   });
 });
