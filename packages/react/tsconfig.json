@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    "paths": {
+      "@taktstock/core": ["../core/src/index.ts"]
+    }
+  },
+  "include": ["src", "test", "vite.config.ts"]
+}
